@@ -10,12 +10,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: Borales/actions-yarn@v2.1.0
+      - name: install
+        uses: Borales/actions-yarn@v2.1.0
         with:
           cmd: install
-      - uses: Borales/actions-yarn@v2.1.0
+      - name: lint
+        uses: Borales/actions-yarn@v2.1.0
         with:
-          cmd: build
-      - uses: Borales/actions-yarn@v2.1.0
+          cmd: lint
+      - name: test
+        uses: Borales/actions-yarn@v2.1.0
         with:
           cmd: test
+      - name: build
+        uses: Borales/actions-yarn@v2.1.0
+        with:
+          cmd: build

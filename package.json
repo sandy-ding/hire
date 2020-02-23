@@ -7,8 +7,9 @@
   "author": "lynweklm@gmail.com",
   "license": "MIT",
   "scripts": {
-    "build": "shx rm -rf lib && tsc -p tsconfig.json --outDir lib",
-    "test": "jest"
+    "lint": "eslint src/*.ts",
+    "test": "jest",
+    "build": "shx rm -rf lib && tsc -p tsconfig.json --outDir lib"
   },
   "devDependencies": {
     "@types/jest": "^25.1.3",
