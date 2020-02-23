@@ -10,12 +10,12 @@ export interface ErrorMessage {
 const PARSE_ERROR_REGULAR_EXPRESSION = /[a-zA-Z]+:\/\/(.\/)*.+\.([a-zA-Z]+)(:[\d]+){2}$/gm;
 
 export function parseError(err: Error): ErrorMessage {
-            const parseStack =
-              err.stack && err.stack.match(PARSE_ERROR_REGULAR_EXPRESSION);
-            const errorMessage: ErrorMessage = {
-              message: err.message,
-              stack: []
-            };
+              const parseStack =
+                err.stack && err.stack.match(PARSE_ERROR_REGULAR_EXPRESSION);
+              const errorMessage: ErrorMessage = {
+                message: err.message,
+                stack: []
+              };
   if (!!parseStack) {
     parseStack.forEach((item: string) => {
       const message = item.split(":");
